@@ -1,4 +1,4 @@
-/* Header 整体背景与固定顶部样式 */
+
 .header {
   background: linear-gradient(45deg, #1a4014 0%, #2d5a27 50%, #1a4014 100%);
   border-bottom: 3px solid #8fbc8f;
@@ -8,7 +8,6 @@
   z-index: 100;
 }
 
-/* Header 容器整体布局，原高度110px → 缩小为70px */
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,18 +15,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px; /* ✅ 原来是110px，现在改为更紧凑的70px */
+  height: 70px; 
 }
 
-/* Logo 和标题的容器 */
 .logo-section {
   display: flex;
   align-items: center;
 }
 
-/* 网站 Logo 文字样式，字体略缩小 */
 .logo-text {
-  font-size: 20px; /* ✅ 原来是24px，略微变小 */
+  font-size: 20px; 
   font-weight: 700;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -37,20 +34,19 @@
   background-clip: text;
 }
 
-/* 主导航栏的横向排列 */
 .main-nav {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   align-items: center;
-  gap: 15px; /* ✅ 原来是gap: 20px，间距小一些 */
+  gap: 15px; 
 }
 
-/* 每一个菜单项的样式 */
+
 .nav-item {
-  padding: 6px 12px; /* ✅ 内边距更紧凑，原来是8px 15px */
-  font-size: 14px;   /* ✅ 字体略小，原来是16px */
+  padding: 6px 12px; 
+  font-size: 14px;   
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -62,29 +58,28 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 搜索框与图标区域整体 */
+
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px; /* ✅ 原来是15px，图标间距略微减小 */
+  gap: 12px; 
 }
 
-/* 搜索框整体外框 */
+
 .search-box {
   display: flex;
   background: rgba(255,255,255,0.1);
-  border-radius: 18px; /* ✅ 稍微紧凑一些 */
+  border-radius: 18px; 
   overflow: hidden;
   border: 1px solid rgba(143, 188, 143, 0.3);
 }
 
-/* 输入框样式 */
 .search-input {
   background: transparent;
   border: none;
-  padding: 6px 10px; /* ✅ 缩小 padding */
+  padding: 6px 10px; 
   color: white;
-  width: 160px; /* ✅ 原来是200px，更短一点 */
+  width: 160px;
   outline: none;
 }
 
@@ -92,18 +87,18 @@
   color: rgba(255,255,255,0.7);
 }
 
-/* 搜索按钮、收藏按钮、用户按钮 样式 */
+
 .search-btn, .favorites-btn, .profile-btn {
   background: none;
   border: none;
   color: #e8f5e8;
   cursor: pointer;
-  padding: 6px; /* ✅ 缩小按钮内边距 */
+  padding: 6px; 
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
-/* 鼠标悬停时放大按钮和背景 */
+
 .search-btn:hover, .favorites-btn:hover, .profile-btn:hover {
   background-color: rgba(143, 188, 143, 0.2);
   transform: scale(1.1);
