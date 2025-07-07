@@ -1,81 +1,77 @@
 # Golf Mini Game
 
-A modern interactive mini golf game web application built with HTML, CSS, and HTMX.
-
-## Overview
-
-Golf Mini Game is an engaging web-based mini golf experience that leverages HTMX for enhanced interactivity without heavy JavaScript. The application features multiple golf courses, realistic physics, and a user-friendly interface.
+A web-based mini golf game with a modern UI built using Vite, TypeScript, and CSS.
 
 ## Features
 
-- Interactive mini golf gameplay with realistic physics
-- 18 challenging courses with varying difficulty levels
-- Score tracking and par system
-- Related games section with recommendations
-- Responsive design for all devices
-- Minimal JavaScript using HTMX for dynamic content
+- Interactive mini golf game with realistic physics
+- Responsive design for various screen sizes
+- Beautiful UI with golf-themed styling
+- Game controls and instructions
+- Related games section
 
-## Technology Stack
+## Development Setup
 
-- HTML5 for structure
-- CSS3 for styling
-- HTMX for interactive elements
-- Minimal vanilla JavaScript for game mechanics
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Golf-Mini-Game
+```
 
-## HTMX Implementation
+2. Install dependencies:
+```bash
+npm install
+```
 
-This project demonstrates modern web development using HTMX to enhance user experience:
+3. Start the development server:
+```bash
+npm run dev
+```
 
-- Game switching functionality using `hx-get` and `hx-target` for seamless content updates
-- Form submissions with `hx-post` for search functionality
-- Dynamic content loading with `hx-trigger` for related games
-- Server-side rendering of game components for improved performance
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Building for Production
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This will generate a `dist` directory with optimized files ready for deployment.
+
+## Deployment
+
+This project is configured for deployment on Netlify. The `netlify.toml` file includes the necessary configuration.
+
+### Deploying to Netlify
+
+1. Push your code to a Git repository (GitHub, GitLab, Bitbucket)
+2. Log in to Netlify and click "New site from Git"
+3. Connect to your Git provider and select the repository
+4. Configure build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. Click "Deploy site"
+
+## Troubleshooting CSS Issues
+
+If CSS styles are not showing on the deployed site:
+
+1. Make sure all CSS paths are relative (starting with `./`) not absolute (starting with `/`)
+2. Verify that the Vite configuration has `base: './'` set
+3. Check that all assets are properly imported in the main entry file
+4. Clear browser cache and refresh the page
 
 ## Project Structure
 
-```
-Golf-Mini-Game/
-  ├── index.html          # Main entry point with game interface
-  ├── src/
-  │   ├── main.ts         # TypeScript entry point
-  │   ├── mini-golf-game.js # Game mechanics
-  │   └── styles.css      # Styling for the application
-  ├── cave-golf.webp      # Game asset
-  └── README.md           # Project documentation
-```
-
-## Getting Started
-
-1. Clone the repository
-2. Open `index.html` in your browser or set up a local server
-3. Enjoy playing mini golf!
-
-## Development
-
-To modify or enhance the application:
-
-1. Edit HTML templates to adjust structure
-2. Update HTMX attributes for interactive behavior
-3. Modify CSS for styling changes
-4. Use the TypeScript/JavaScript files for complex game mechanics
-
-## Best Practices
-
-This project follows these HTMX best practices:
-
-- Declarative attributes instead of JavaScript event handlers
-- Server-side validation for data integrity
-- Minimal response sizes by returning only essential HTML
-- Consistent naming conventions for HTMX attributes
-- Modular structure for templates and components
-
-## Browser Compatibility
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- `index.html` - Main HTML file
+- `src/` - Source code directory
+  - `main.ts` - TypeScript entry point
+  - `styles.css` - Main CSS file
+  - `mini-golf-game.js` - Game logic
+- `dist/` - Build output directory (generated after build)
 
 ## License
 
-MIT License
+[MIT](LICENSE)

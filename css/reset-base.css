@@ -1,0 +1,14 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: greenyellow;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}

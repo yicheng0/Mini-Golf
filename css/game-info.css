@@ -1,0 +1,144 @@
+/* Game Info Section */
+.game-info {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.info-container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 2px solid #8fbc8f;
+}
+
+.breadcrumb {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.breadcrumb span {
+  color: #2d5a27;
+}
+
+.game-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.game-details h2 {
+  color: #2d5a27;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #ff6b35;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.description h4 {
+  color: #2d5a27;
+  margin: 20px 0 10px 0;
+}
+
+.description ul {
+  margin-left: 20px;
+  color: #555;
+}
+
+.description ul li {
+  margin-bottom: 5px;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: linear-gradient(45deg, #2d5a27, #4a7c59);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.release-info {
+  background: rgba(45, 90, 39, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #2d5a27;
+}
+
+.release-info p {
+  margin-bottom: 8px;
+  color: #2d5a27;
+}
+
+/* Similar Games Grid */
+.similar-games {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.games-container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 2px solid #8fbc8f;
+}
+
+.games-container h3 {
+  color: #2d5a27;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #8fbc8f;
+  padding-bottom: 10px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.sport-game-card {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  background: white;
+}
+
+.sport-game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(45, 90, 39, 0.2);
+  border-color: #8fbc8f;
+}
+
+.sport-game-thumb {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sport-game-name {
+  font-size: 13px;
+  color: #2d5a27;
+  font-weight: 500;
+  display: block;
+}
