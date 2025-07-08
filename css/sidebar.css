@@ -5,15 +5,16 @@
   padding: 20px;
   height: fit-content;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border: 2px solid #8fbc8f;
+  border: 2px solid #0066cc;
 }
 
 .related-games h3 {
-  color: #2d5a27;
+  color: #0066cc;
   margin-bottom: 15px;
   font-size: 18px;
-  border-bottom: 2px solid #8fbc8f;
+  border-bottom: 2px solid #0066cc;
   padding-bottom: 8px;
+  text-align: center;
 }
 
 .game-grid {
@@ -31,13 +32,15 @@
 }
 
 .game-card:hover {
-  background: rgba(143, 188, 143, 0.1);
+  background: rgba(0, 102, 204, 0.1);
   transform: translateX(3px);
-  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
 }
 
 .game-thumb {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 6px;
   margin-bottom: 8px;
 }
@@ -45,7 +48,7 @@
 .game-name {
   display: block;
   font-weight: bold;
-  color: #2d572c;
+  color: #0066cc;
   font-size: 14px;
 }
 
