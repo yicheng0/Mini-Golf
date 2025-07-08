@@ -15,6 +15,16 @@
   <link rel="stylesheet" href="css/game-info.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTT73EBLLE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JTT73EBLLE');
+  </script>
 </head>
 
 <body>
@@ -41,9 +51,6 @@
           <input type="text" placeholder="Search games..." class="search-input">
           <button class="search-btn">🔍</button>
         </div>
-        <div class="favorites-btn">❤️</div>
-        <div class="profile-btn">👤</div>
-      </div>
     </div>
   </header>
 
@@ -52,13 +59,10 @@
       <div class="game-header">
         <div class="game-logo">
           <h1 class="game-title">MINI GOLF</h1>
-          <p class="game-subtitle">CHAMPIONSHIP</p>
         </div>
         <div class="game-stats">
-          <span class="likes">👍 8,542</span>
-          <span class="plays">▶️ 12,847</span>
-          <button class="favorite-game">❤️</button>
-          <button class="fullscreen">⛶</button>
+          <span class="likes" id="likeCount">👍 8542</span>
+          <button class="favorite-game" id="likeBtn">❤️</button>
         </div>
       </div>
 
@@ -86,10 +90,12 @@
       <div class="related-games">
         <h3>Related Golf Games</h3>
         <div class="game-grid">
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/3333987317.webp" alt="Mini Golf Saga" class="game-thumb">
+
+          <a class="game-card" href="Games/mini-golf-saga.html">
+            <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
             <span class="game-name">Mini Golf Saga</span>
-          </div>
+          </a>
+          
           <div class="game-card">
             <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
             <span class="game-name">Island Mini Golf</span>
@@ -110,6 +116,7 @@
             <img src="https://ext.same-assets.com/1650436415/2925257667.webp" alt="Cave Golf" class="game-thumb">
             <span class="game-name">Cave Golf</span>
           </div>
+          
         </div>
       </div>
     </aside>
@@ -125,7 +132,7 @@
         <div class="info-left">
           <h2>Mini Golf Championship</h2>
           <div class="rating">
-            ⭐ 4.3 / 5 (8,542 votes)
+            ⭐ 4.3 / 5 (<span id="voteCount">8542</span> votes)
           </div>
 
           <div class="description">
@@ -218,7 +225,70 @@
           switchToIframe.style.display = 'none';
         });
       }
+
+      // Like functionality
+      const likeBtn = document.getElementById('likeBtn');
+      const likeCount = document.getElementById('likeCount');
+      const voteCount = document.getElementById('voteCount');
+      const STORAGE_KEY = 'golf_mini_game_likes';
+      const LAST_LIKE_KEY = 'golf_mini_game_last_like';
+      const LIKE_COOLDOWN = 5000; // 5 seconds cooldown
+
+      // Initialize like count from localStorage
+      let currentLikes = parseInt(localStorage.getItem(STORAGE_KEY)) || 8542;
+      updateLikeDisplay(currentLikes);
+
+      // Add click event listener
+      likeBtn.addEventListener('click', () => {
+        const now = Date.now();
+        const lastLike = parseInt(localStorage.getItem(LAST_LIKE_KEY)) || 0;
+
+        // Check cooldown
+        if (now - lastLike < LIKE_COOLDOWN) {
+          showCooldownMessage();
+          return;
+        }
+
+        // Increment like count
+        currentLikes++;
+        localStorage.setItem(STORAGE_KEY, currentLikes);
+        localStorage.setItem(LAST_LIKE_KEY, now);
+
+        // Update display with animation
+        updateLikeDisplay(currentLikes);
+        animateLike();
+      });
+
+      function updateLikeDisplay(likes) {
+        likeCount.textContent = `👍 ${likes.toLocaleString()}`;
+        if (voteCount) {
+          voteCount.textContent = likes.toLocaleString();
+        }
+      }
+
+      function animateLike() {
+        likeBtn.style.transform = 'scale(1.3)';
+        likeBtn.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
+        
+        setTimeout(() => {
+          likeBtn.style.transform = 'scale(1)';
+          likeBtn.style.backgroundColor = 'rgba(0, 102, 204, 0.2)';
+        }, 200);
+      }
+
+      function showCooldownMessage() {
+        const originalText = likeBtn.textContent;
+        likeBtn.textContent = '⏰';
+        likeBtn.style.opacity = '0.5';
+        
+        setTimeout(() => {
+          likeBtn.textContent = originalText;
+          likeBtn.style.opacity = '1';
+        }, 1000);
+      }
+
     });
   </script>
+
 </body>
 </html>
