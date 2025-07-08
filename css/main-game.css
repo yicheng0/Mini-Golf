@@ -5,31 +5,31 @@
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 30px;
+  gap: 40px;
 }
 
 /* Game Section */
 .game-section {
-  background: rgba(0,0,0,0.8);
+  background: rgba(10, 25, 47, 0.9);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  border: 2px solid #2d5a27;
+  border: 2px solid #0066cc;
 }
 
 .game-header {
-  background: linear-gradient(45deg, #1a4014, #2d5a27);
+  background: linear-gradient(135deg, rgb(10, 25, 47), rgb(0, 102, 204));
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8fbc8f;
+  border-bottom: 2px solid #0066cc;
 }
 
 .game-title {
   font-size: 36px;
   font-weight: 700;
-  color: #90ee90;
+  color: #66ccff;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
   letter-spacing: 2px;
 }
@@ -53,28 +53,30 @@
   border-radius: 15px;
   color: white;
   font-size: 14px;
-  border: 1px solid rgba(143, 188, 143, 0.3);
+  border: 1px solid rgba(0, 102, 204, 0.3);
 }
 
-.favorite-game, .fullscreen {
-  background: rgba(143, 188, 143, 0.2);
-  border: 1px solid #8fbc8f;
+.favorite-game {
+  background: rgba(0, 102, 204, 0.2);
+  border: 1px solid #0066cc;
   color: white;
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 16px;
+  user-select: none;
 }
 
-.favorite-game:hover, .fullscreen:hover {
-  background: rgba(143, 188, 143, 0.4);
+.favorite-game:hover {
+  background: rgba(0, 102, 204, 0.4);
   transform: scale(1.1);
 }
 
 .game-container {
   width: 100%;
   height: 500px;
-  background: #2d5a27;
+  background: linear-gradient(135deg, rgb(10, 25, 47), rgb(0, 102, 204));
   position: relative;
 }
 
@@ -87,7 +89,7 @@
 .mini-golf-canvas {
   width: 100%;
   height: 100%;
-  background: #2d5a27;
+  background: linear-gradient(135deg, rgb(10, 25, 47), rgb(0, 102, 204));
   border: none;
 }
 
@@ -99,7 +101,7 @@
 }
 
 .switch-btn {
-  background: linear-gradient(45deg, #2d5a27, #4a7c59);
+  background: linear-gradient(135deg, rgb(10, 25, 47), rgb(0, 102, 204));
   color: white;
   border: none;
   padding: 8px 16px;
@@ -111,15 +113,15 @@
 }
 
 .switch-btn:hover {
-  background: linear-gradient(45deg, #4a7c59, #2d5a27);
+  background: linear-gradient(135deg, rgb(0, 102, 204), rgb(10, 25, 47));
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .game-controls {
-  background: rgba(45, 90, 39, 0.9);
+  background: rgba(10, 25, 47, 0.9);
   padding: 15px 20px;
   color: white;
   font-size: 14px;
-  border-top: 1px solid #8fbc8f;
+  border-top: 1px solid #0066cc;
 }
