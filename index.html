@@ -37,13 +37,29 @@
       </div>
 
       <nav class="main-nav">
-        <div class="nav-item">Home</div>
-        <div class="nav-item">Action</div>
-        <div class="nav-item">Sports</div>
-        <div class="nav-item">Golf</div>
-        <div class="nav-item">Arcade</div>
-        <div class="nav-item">Mobile</div>
-        <div class="nav-item">Multiplayer</div>
+        <div class="nav-item">Trending Now</div>
+        <div class="nav-item">Hot</div>
+        <div class="nav-item">Idle</div>
+        <div class="nav-item">Hyper</div>
+        <div class="nav-item">shooter</div>
+        <div class="nav-item">puzzle</div>
+        <div class="nav-dropdown">
+          <div class="nav-item dropdown-toggle" id="moreDropdown">More ▼</div>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item">Action</div>
+            <div class="dropdown-item">Sports</div>
+            <div class="dropdown-item">Golf</div>
+            <div class="dropdown-item">Arcade</div>
+            <div class="dropdown-item">Mobile</div>
+            <div class="dropdown-item">Multiplayer</div>
+            <div class="dropdown-item">Racing</div>
+            <div class="dropdown-item">Adventure</div>
+            <div class="dropdown-item">Strategy</div>
+            <div class="dropdown-item">Simulation</div>
+            <div class="dropdown-item">Casual</div>
+            <div class="dropdown-item">Retro</div>
+          </div>
+        </div>
       </nav>
 
       <div class="header-actions">
@@ -51,6 +67,9 @@
           <input type="text" placeholder="Search games..." class="search-input">
           <button class="search-btn">🔍</button>
         </div>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
     </div>
   </header>
 
@@ -81,15 +100,17 @@
         </div>
       </div>
 
-      <div class="game-controls">
-        <p><strong>Controls:</strong> Use your mouse to aim and shoot. Click and drag to adjust power and direction.</p>
-      </div>
+    
     </div>
 
     <aside class="sidebar">
-      <div class="related-games">
-        <h3>Related Golf Games</h3>
-        <div class="game-grid">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <span id="toggleText">Show Related Games</span> <span id="toggleIcon">▼</span>
+      </button>
+      <div class="sidebar-content" id="sidebarContent">
+        <div class="related-games">
+          <h3>Related Golf Games</h3>
+          <div class="game-grid">
 
           <a class="game-card" href="Games/mini-golf-saga.html">
             <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
@@ -117,6 +138,7 @@
             <span class="game-name">Cave Golf</span>
           </div>
           
+          </div>
         </div>
       </div>
     </aside>
@@ -136,7 +158,11 @@
           </div>
 
           <div class="description">
-            <p>Experience the ultimate mini golf challenge! Master 18 unique courses with varying difficulty levels. Each hole presents new obstacles and challenges that will test your precision and skill.</p>
+            <h4>Game Overview</h4>
+            <p>Mini Golf Championship is a <strong>free browser game</strong> that brings the classic miniature golf experience directly to your screen. This <strong>online mini golf game</strong> features 18 meticulously designed courses filled with creative obstacles, ramps, and hazards that challenge players of all skill levels. Perfect for casual gamers and golf enthusiasts alike, the game combines easy-to-learn controls with progressively challenging gameplay that keeps you coming back for more.</p>
+            
+            <p>Whether you're looking for a quick gaming break or want to master every course, this free-to-play mini golf experience offers hours of entertainment without any downloads or installations required. Simply open your web browser and start putting your way through beautifully crafted holes with realistic physics and smooth controls.</p>
+            
             <h4>How to Play Mini Golf Championship</h4>
             <p>Use your mouse to aim your shot by pointing in the direction you want the ball to go. Click and drag backwards to set the power - the further you drag, the stronger your shot will be. Watch out for obstacles, slopes, and water hazards that can affect your ball's path. Try to complete each hole in par or better!</p>
             <h4>Game Features</h4>
@@ -147,6 +173,33 @@
               <li>Score tracking and par system</li>
               <li>Beautiful golf course environments</li>
             </ul>
+            <h4>Frequently Asked Questions</h4>
+            <div class="faq-section">
+              <div class="faq-item">
+                <h5>Is this mini golf game completely free to play?</h5>
+                <p>Yes! This online mini golf game is completely free to play with no hidden costs, subscriptions, or in-app purchases. Simply visit our website and start playing immediately in your web browser.</p>
+              </div>
+              
+              <div class="faq-item">
+                <h5>Do I need to download or install anything to play?</h5>
+                <p>No downloads or installations required! This is a browser-based game that runs directly in your web browser. It's compatible with Chrome, Firefox, Safari, and Edge on both desktop and mobile devices.</p>
+              </div>
+              
+              <div class="faq-item">
+                <h5>How do I control the golf ball in the game?</h5>
+                <p>Use your mouse to aim by pointing in the direction you want the ball to go. Click and drag backwards to set the power - the further you drag, the stronger your shot will be. On mobile devices, simply touch and drag to aim and shoot.</p>
+              </div>
+              
+              <div class="faq-item">
+                <h5>How many levels/courses are there in the game?</h5>
+                <p>The game features 18 unique mini golf courses, each with different obstacles, terrain types, and difficulty levels. The courses progress from beginner-friendly to challenging, providing hours of entertainment.</p>
+              </div>
+              
+              <div class="faq-item">
+                <h5>Can I play this game on my mobile phone or tablet?</h5>
+                <p>Absolutely! The game is fully responsive and optimized for mobile devices. You can play on smartphones, tablets, and desktop computers with the same smooth gameplay experience across all devices.</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -286,6 +339,145 @@
           likeBtn.style.opacity = '1';
         }, 1000);
       }
+
+      // Header scroll effect
+      const header = document.querySelector('.header');
+      let lastScrollY = window.scrollY;
+      
+      function updateHeaderOnScroll() {
+        const currentScrollY = window.scrollY;
+        
+        // Add/remove scrolled class based on scroll position
+        if (currentScrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        lastScrollY = currentScrollY;
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(updateHeaderOnScroll);
+          ticking = true;
+          setTimeout(() => ticking = false, 16); // ~60fps
+        }
+      }
+      
+      window.addEventListener('scroll', requestTick);
+      
+      // Initial check
+      updateHeaderOnScroll();
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const body = document.body;
+      
+      // Check for saved theme preference or default to light mode
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeIcon.textContent = '☀️';
+      } else {
+        themeIcon.textContent = '🌙';
+      }
+      
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        
+        if (body.classList.contains('dark')) {
+          themeIcon.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        }
+      });
+
+      // Sidebar toggle functionality
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const sidebarContent = document.getElementById('sidebarContent');
+      const toggleText = document.getElementById('toggleText');
+      const toggleIcon = document.getElementById('toggleIcon');
+      
+      if (sidebarToggle && sidebarContent) {
+        sidebarToggle.addEventListener('click', () => {
+          sidebarContent.classList.toggle('expanded');
+          
+          if (sidebarContent.classList.contains('expanded')) {
+            toggleText.textContent = 'Hide Related Games';
+            toggleIcon.textContent = '▲';
+          } else {
+            toggleText.textContent = 'Show Related Games';
+            toggleIcon.textContent = '▼';
+          }
+        });
+      }
+
+      // Dropdown navigation functionality
+      const moreDropdown = document.getElementById('moreDropdown');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      
+      if (moreDropdown && dropdownMenu) {
+        // Toggle dropdown on click
+        moreDropdown.addEventListener('click', (e) => {
+          e.stopPropagation();
+          
+          // Smart positioning for dropdown
+          const rect = moreDropdown.getBoundingClientRect();
+          const viewportWidth = window.innerWidth;
+          const dropdownWidth = 320; // max-width of dropdown
+          
+          // Check if dropdown would go off screen to the right
+          if (rect.right + dropdownWidth > viewportWidth) {
+            dropdownMenu.style.right = '0';
+            dropdownMenu.style.left = 'auto';
+          } else {
+            dropdownMenu.style.left = '0';
+            dropdownMenu.style.right = 'auto';
+          }
+          
+          dropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!moreDropdown.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+          }
+        });
+        
+        // Handle dropdown item clicks
+        const dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', (e) => {
+            const selectedCategory = e.target.textContent;
+            console.log('Selected category:', selectedCategory);
+            // Here you can add logic to handle category selection
+            // For example, filter games or navigate to category page
+            dropdownMenu.classList.remove('show');
+          });
+        });
+      }
+
+      // Handle main nav item clicks
+      const navItems = document.querySelectorAll('.nav-item:not(.dropdown-toggle)');
+      navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          // Remove active class from all nav items
+          navItems.forEach(navItem => navItem.classList.remove('active'));
+          // Add active class to clicked item
+          e.target.classList.add('active');
+          
+          const selectedCategory = e.target.textContent;
+          console.log('Selected main category:', selectedCategory);
+          // Here you can add logic to handle main category selection
+        });
+      });
 
     });
   </script>
