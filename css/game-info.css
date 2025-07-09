@@ -1,26 +1,37 @@
 /* Game Info Section */
 .game-info {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
 .info-container {
-  background: rgba(255,255,255,0.95);
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border: 2px solid #8fbc8f;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border: 2px solid var(--border-primary);
 }
 
 .breadcrumb {
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 20px;
   font-size: 14px;
 }
 
 .breadcrumb span {
-  color: #2d5a27;
+  color: var(--primary);
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
 .game-details {
@@ -30,29 +41,73 @@
 }
 
 .game-details h2 {
-  color: #2d5a27;
+  color: var(--primary);
   font-size: 28px;
   margin-bottom: 10px;
 }
 
+.description p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+  margin-top: 20px;
+}
+
+.faq-item {
+  background: var(--surface-glass);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: var(--surface-glass-hover);
+  border-color: var(--border-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.faq-item h5 {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.faq-item p {
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
 .rating {
-  color: #ff6b35;
+  color: var(--warning);
   font-weight: 500;
   margin-bottom: 20px;
 }
 
 .description h4 {
-  color: #2d5a27;
+  color: var(--primary);
   margin: 20px 0 10px 0;
+  font-weight: 600;
 }
 
 .description ul {
   margin-left: 20px;
-  color: #555;
+  color: var(--text-dark);
 }
 
 .description ul li {
   margin-bottom: 5px;
+  color: var(--text-dark);
 }
 
 .game-tags {
@@ -63,8 +118,8 @@
 }
 
 .tag {
-  background: linear-gradient(45deg, #2d5a27, #4a7c59);
-  color: white;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 12px;
@@ -72,37 +127,37 @@
 }
 
 .release-info {
-  background: rgba(45, 90, 39, 0.1);
+  background: var(--surface-glass);
   padding: 15px;
   border-radius: 8px;
-  border-left: 4px solid #2d5a27;
+  border-left: 4px solid var(--border-primary);
 }
 
 .release-info p {
   margin-bottom: 8px;
-  color: #2d5a27;
+  color: var(--text-dark);
 }
 
 /* Similar Games Grid */
 .similar-games {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
 .games-container {
-  background: rgba(255,255,255,0.95);
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border: 2px solid #8fbc8f;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border: 2px solid var(--border-primary);
 }
 
 .games-container h3 {
-  color: #2d5a27;
+  color: var(--primary);
   margin-bottom: 20px;
   font-size: 24px;
-  border-bottom: 2px solid #8fbc8f;
+  border-bottom: 2px solid var(--border-primary);
   padding-bottom: 10px;
 }
 
@@ -118,14 +173,14 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
-  background: white;
+  border: 1px solid var(--border-light);
+  background: var(--text-primary);
 }
 
 .sport-game-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(45, 90, 39, 0.2);
-  border-color: #8fbc8f;
+  box-shadow: 0 8px 20px var(--shadow-glow);
+  border-color: var(--border-primary);
 }
 
 .sport-game-thumb {
@@ -138,7 +193,7 @@
 
 .sport-game-name {
   font-size: 13px;
-  color: #2d5a27;
+  color: var(--primary);
   font-weight: 500;
   display: block;
 }
