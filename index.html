@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/game-info.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pagination.css">
   <link rel="stylesheet" href="css/animations.css">
   
   <!-- Google tag (gtag.js) -->
@@ -37,12 +38,22 @@
       </div>
 
       <nav class="main-nav">
-        <div class="nav-item">Trending Now</div>
+        <div class="nav-item">New </div>
         <div class="nav-item">Hot</div>
         <div class="nav-item">Idle</div>
         <div class="nav-item">Hyper</div>
         <div class="nav-item">shooter</div>
         <div class="nav-item">puzzle</div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" placeholder="Search games..." class="search-input">
+          <button class="search-btn">🔍</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
         <div class="nav-dropdown">
           <div class="nav-item dropdown-toggle" id="moreDropdown">More ▼</div>
           <div class="dropdown-menu" id="dropdownMenu">
@@ -60,16 +71,6 @@
             <div class="dropdown-item">Retro</div>
           </div>
         </div>
-      </nav>
-
-      <div class="header-actions">
-        <div class="search-box">
-          <input type="text" placeholder="Search games..." class="search-input">
-          <button class="search-btn">🔍</button>
-        </div>
-        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-          <span id="themeIcon">🌙</span>
-        </button>
     </div>
   </header>
 
@@ -99,50 +100,48 @@
           <button id="switchToIframe" class="switch-btn" style="display: none;">Back to Original</button>
         </div>
       </div>
-
-    
     </div>
+  </main>
 
-    <aside class="sidebar">
-      <button class="sidebar-toggle" id="sidebarToggle">
-        <span id="toggleText">Show Related Games</span> <span id="toggleIcon">▼</span>
-      </button>
-      <div class="sidebar-content" id="sidebarContent">
-        <div class="related-games">
-          <h3>Related Golf Games</h3>
-          <div class="game-grid">
+  <aside class="sidebar">
+    <button class="sidebar-toggle" id="sidebarToggle">
+      <span id="toggleText">Show Related Games</span> <span id="toggleIcon">▼</span>
+    </button>
+    <div class="sidebar-content" id="sidebarContent">
+      <div class="related-games">
+        <h3>Related Golf Games</h3>
+        <div class="game-grid">
 
-          <a class="game-card" href="Games/mini-golf-saga.html">
-            <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
-            <span class="game-name">Mini Golf Saga</span>
-          </a>
-          
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
-            <span class="game-name">Island Mini Golf</span>
-          </div>
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/1526580823.webp" alt="Golf Orbit" class="game-thumb">
-            <span class="game-name">Golf Orbit</span>
-          </div>
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/1643440025.webp" alt="Minigolf Tour" class="game-thumb">
-            <span class="game-name">Minigolf Tour</span>
-          </div>
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/507285008.webp" alt="Mini Golf Adventure" class="game-thumb">
-            <span class="game-name">Mini Golf Adventure</span>
-          </div>
-          <div class="game-card">
-            <img src="https://ext.same-assets.com/1650436415/2925257667.webp" alt="Cave Golf" class="game-thumb">
-            <span class="game-name">Cave Golf</span>
-          </div>
-          
-          </div>
+        <a class="game-card" href="Games/mini-golf-saga.html">
+          <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
+          <span class="game-name">Mini Golf Saga</span>
+        </a>
+        
+        <div class="game-card">
+          <img src="https://ext.same-assets.com/1650436415/1630766896.webp" alt="Island Mini Golf" class="game-thumb">
+          <span class="game-name">Island Mini Golf</span>
+        </div>
+        <div class="game-card">
+          <img src="https://ext.same-assets.com/1650436415/1526580823.webp" alt="Golf Orbit" class="game-thumb">
+          <span class="game-name">Golf Orbit</span>
+        </div>
+        <div class="game-card">
+          <img src="https://ext.same-assets.com/1650436415/1643440025.webp" alt="Minigolf Tour" class="game-thumb">
+          <span class="game-name">Minigolf Tour</span>
+        </div>
+        <div class="game-card">
+          <img src="https://ext.same-assets.com/1650436415/507285008.webp" alt="Mini Golf Adventure" class="game-thumb">
+          <span class="game-name">Mini Golf Adventure</span>
+        </div>
+        <div class="game-card">
+          <img src="https://ext.same-assets.com/1650436415/2925257667.webp" alt="Cave Golf" class="game-thumb">
+          <span class="game-name">Cave Golf</span>
+        </div>
+        
         </div>
       </div>
-    </aside>
-  </main>
+    </div>
+  </aside>
 
   <section class="game-info">
     <div class="info-container">
@@ -249,6 +248,32 @@
           <img src="https://ext.same-assets.com/1650436415/2082732077.webp" alt="Football Legends" class="sport-game-thumb">
           <span class="sport-game-name">Football Legends</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pagination Section -->
+  <section class="pagination-section">
+    <div class="pagination-container">
+      <div class="pagination-controls">
+        <button class="pagination-btn prev-btn" id="prevBtn" disabled>
+          <span class="pagination-arrow">‹</span>
+          <span class="pagination-text">Previous</span>
+        </button>
+        
+        <div class="pagination-numbers">
+          <button class="pagination-number active" data-page="1">1</button>
+          <button class="pagination-number" data-page="2">2</button>
+        </div>
+        
+        <button class="pagination-btn next-btn" id="nextBtn">
+          <span class="pagination-text">Next</span>
+          <span class="pagination-arrow">›</span>
+        </button>
+      </div>
+      
+      <div class="pagination-info">
+        <span class="current-page">Page <span id="currentPageNum">1</span> of <span id="totalPages">2</span></span>
       </div>
     </div>
   </section>
@@ -478,6 +503,110 @@
           // Here you can add logic to handle main category selection
         });
       });
+
+      // Pagination functionality
+      const paginationNumbers = document.querySelectorAll('.pagination-number');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentPageNum = document.getElementById('currentPageNum');
+      const totalPages = document.getElementById('totalPages');
+      const sportsGamesGrid = document.querySelector('.games-grid');
+      
+      let currentPage = 1;
+      const totalPageCount = 2;
+      
+      // Sample games data for different pages (framework only)
+      const gamesData = {
+        1: [
+          { name: "3D Free Kick", image: "https://ext.same-assets.com/1650436415/3161300810.webp" },
+          { name: "Penalty Shooters", image: "https://ext.same-assets.com/1650436415/612564780.webp" },
+          { name: "Basket Random", image: "https://ext.same-assets.com/1650436415/3649234817.webp" },
+          { name: "Wheelie Bike", image: "https://ext.same-assets.com/1650436415/2338168201.webp" },
+          { name: "Toon Cup 2024", image: "https://ext.same-assets.com/1650436415/3021570033.webp" },
+          { name: "Football Legends", image: "https://ext.same-assets.com/1650436415/2082732077.webp" }
+        ],
+        2: [
+          { name: "Tennis Masters", image: "https://ext.same-assets.com/1650436415/3161300810.webp" },
+          { name: "Boxing Physics", image: "https://ext.same-assets.com/1650436415/612564780.webp" },
+          { name: "Swimming Pro", image: "https://ext.same-assets.com/1650436415/3649234817.webp" },
+          { name: "Track & Field", image: "https://ext.same-assets.com/1650436415/2338168201.webp" },
+          { name: "Volleyball Challenge", image: "https://ext.same-assets.com/1650436415/3021570033.webp" },
+          { name: "Hockey Stars", image: "https://ext.same-assets.com/1650436415/2082732077.webp" }
+        ]
+      };
+
+      function updatePaginationButtons() {
+        // Update page numbers
+        paginationNumbers.forEach(btn => {
+          btn.classList.remove('active');
+          if (parseInt(btn.dataset.page) === currentPage) {
+            btn.classList.add('active');
+          }
+        });
+
+        // Update prev/next buttons
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPageCount;
+        
+        // Update current page display
+        currentPageNum.textContent = currentPage;
+      }
+
+      function loadGamesForPage(page) {
+        const games = gamesData[page] || [];
+        
+        // Clear current games
+        sportsGamesGrid.innerHTML = '';
+        
+        // Add games for current page
+        games.forEach(game => {
+          const gameCard = document.createElement('div');
+          gameCard.className = 'sport-game-card';
+          gameCard.innerHTML = `
+            <img src="${game.image}" alt="${game.name}" class="sport-game-thumb">
+            <span class="sport-game-name">${game.name}</span>
+          `;
+          sportsGamesGrid.appendChild(gameCard);
+        });
+        
+        // Add loading animation
+        sportsGamesGrid.style.opacity = '0.7';
+        setTimeout(() => {
+          sportsGamesGrid.style.opacity = '1';
+        }, 300);
+      }
+
+      // Event listeners for pagination
+      paginationNumbers.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const page = parseInt(btn.dataset.page);
+          if (page !== currentPage) {
+            currentPage = page;
+            loadGamesForPage(currentPage);
+            updatePaginationButtons();
+          }
+        });
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          loadGamesForPage(currentPage);
+          updatePaginationButtons();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPageCount) {
+          currentPage++;
+          loadGamesForPage(currentPage);
+          updatePaginationButtons();
+        }
+      });
+
+      // Initialize pagination
+      updatePaginationButtons();
+      loadGamesForPage(1);
 
     });
   </script>
