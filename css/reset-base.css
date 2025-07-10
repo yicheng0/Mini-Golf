@@ -1,3 +1,91 @@
+/* CSS Variables - Light Theme (Default) */
+:root {
+  /* Primary Colors */
+  --primary: #0077ff;
+  --primary-hover: #0052a3;
+  --primary-light: #66ccff;
+  --primary-dark: #0d1b2a;
+  
+  /* Surface Colors */
+  --surface-1: #0d1b2a;
+  --surface-2: #1a2332;
+  --surface-3: #2a3441;
+  --surface-glass: rgba(10, 25, 47, 0.3);
+  --surface-glass-hover: rgba(10, 25, 47, 0.5);
+  
+  /* Background Colors */
+  --bg-primary: linear-gradient(135deg, rgb(10, 25, 47), rgb(0, 102, 204));
+  --bg-secondary: rgba(10, 25, 47, 0.9);
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-accent: #66ccff;
+  --text-dark: #333333;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  
+  /* Border Colors */
+  --border-primary: #0066cc;
+  --border-secondary: rgba(0, 102, 204, 0.3);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-glass: rgba(0, 102, 204, 0.2);
+  
+  /* Status Colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-heavy: rgba(0, 0, 0, 0.3);
+  --shadow-glow: rgba(0, 102, 204, 0.4);
+}
+
+/* Dark Theme Variables */
+.dark {
+  /* Primary Colors */
+  --primary: #4a9eff;
+  --primary-hover: #3182ce;
+  --primary-light: #90cdf4;
+  --primary-dark: #1a202c;
+  
+  /* Surface Colors */
+  --surface-1: #1a202c;
+  --surface-2: #2d3748;
+  --surface-3: #4a5568;
+  --surface-glass: rgba(26, 32, 44, 0.8);
+  --surface-glass-hover: rgba(26, 32, 44, 0.9);
+  
+  /* Background Colors */
+  --bg-primary: linear-gradient(135deg, #1a202c, #2d3748);
+  --bg-secondary: rgba(26, 32, 44, 0.95);
+  --bg-card: rgba(45, 55, 72, 0.95);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  
+  /* Text Colors */
+  --text-primary: #f7fafc;
+  --text-secondary: rgba(247, 250, 252, 0.8);
+  --text-accent: #90cdf4;
+  --text-dark: #e2e8f0;
+  --text-muted: rgba(247, 250, 252, 0.6);
+  
+  /* Border Colors */
+  --border-primary: #4a9eff;
+  --border-secondary: rgba(74, 158, 255, 0.4);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-glass: rgba(74, 158, 255, 0.3);
+  
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --shadow-glow: rgba(74, 158, 255, 0.5);
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -7,8 +95,9 @@
 
 body {
   font-family: 'Roboto', Arial, sans-serif;
-  background: greenyellow;
-  color: #333;
+  background: var(--bg-primary);
+  color: var(--text-dark);
   line-height: 1.6;
   min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
