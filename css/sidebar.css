@@ -1,40 +1,79 @@
-/* Sidebar */
+/* Sidebar - Bottom Navigation Bar */
 .sidebar {
-  background: rgba(255,255,255,0.95);
+  background: var(--bg-card);
   border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border: 2px solid var(--border-primary);
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Sidebar Toggle Button (always visible) */
+.sidebar-toggle {
+  display: block;
+  background: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px;
+  transition: all 0.3s ease;
+  width: calc(100% - 40px);
+}
+
+.sidebar-toggle:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Sidebar Content - Hidden by default */
+.sidebar-content {
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.sidebar-content.expanded {
+  max-height: 1000px;
   padding: 20px;
-  height: fit-content;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border: 2px solid #0066cc;
+  margin: 0;
 }
 
 .related-games h3 {
-  color: #0066cc;
+  color: var(--primary);
   margin-bottom: 15px;
   font-size: 18px;
-  border-bottom: 2px solid #0066cc;
+  border-bottom: 2px solid var(--border-primary);
   padding-bottom: 8px;
   text-align: center;
 }
 
 .game-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 设置为两列 */
-  gap: 16px; /* 设置每列/每行之间的间距 */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: 100%;
 }
 
 .game-card {
-  background: #fff;
+  background: var(--text-primary);
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px var(--shadow-light);
+  transition: all 0.3s ease;
 }
 
 .game-card:hover {
-  background: rgba(0, 102, 204, 0.1);
+  background: var(--surface-glass);
   transform: translateX(3px);
-  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+  box-shadow: 0 2px 8px var(--shadow-glow);
 }
 
 .game-thumb {
@@ -48,14 +87,26 @@
 .game-name {
   display: block;
   font-weight: bold;
-  color: #0066cc;
+  color: var(--primary);
   font-size: 14px;
 }
 
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
 @media (max-width: 480px) {
   .game-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
